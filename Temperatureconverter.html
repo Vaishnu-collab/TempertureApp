@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Temperature Converter</title>
+  <style>
+    *{font-size: 50px; font-family: Cambria;}
+    body{background-color: rgb(174, 240, 74);}
+  </style>
+</head>
+<body>
+  <center>
+<h1>Temperature Converter</h1>
+<form >
+  <label >Cel</label>
+  <input type="number" step="0.01" id="Cel" placeholder="enter temp in cel">
+  <br/><br/>
+  <label >Fah</label>
+  <input type="number" step="0.01" id="Fah" placeholder="enter temp in fah">
+  <script>
+    let Cel=document.getElementById("Cel");
+    let Fah=document.getElementById("Fah");
+
+    Cel.addEventListener("input",function(){
+      let c=parseFloat(Cel.value);
+      let f=c*1.8+32;
+      Fah.value=f.toFixed(2);
+    });
+    Fah.addEventListener("input",function(){
+      let f=parseFloat(Fah.value)
+      let c= (f-32)*5/9;
+      Cel.value=c.toFixed(2)
+    });
+  </script>
+
+</form>
+  </center>
+  
+</body>
+</html>
